@@ -1,3 +1,4 @@
+require 'uri'
 require 'oauth'
 require 'wearable_apis/nokia/base'
 
