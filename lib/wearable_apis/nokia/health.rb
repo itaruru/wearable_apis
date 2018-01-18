@@ -24,7 +24,7 @@ module WearableApis
       #                                   Either the lastupdate, the date or the stardateymd/enddateymd must be used.
       # @option opts [type] :offset   Value to specify when a first call returns 'more=true' and 'offset=XX' with XX the value use.
       # @return [Hash, nil] return the api response.
-      def get_activity_measureses(userid, opts={})
+      def get_activity_measureses(userid, opts = {})
         opts.merge!({
                       action: 'getactivity',
                       userid: userid
@@ -41,7 +41,7 @@ module WearableApis
       #
       #
       #
-      def get_body_measures(userid, opts={})
+      def get_body_measures(userid, opts = {})
         opts.merge!({
                       action: 'getmeas',
                       userid: userid
@@ -59,7 +59,7 @@ module WearableApis
       #
       #
       #
-      def get_intraday_activity(userid, startdate, enddate, opts={})
+      def get_intraday_activity(userid, startdate, enddate, opts = {})
         opts.merge!({
                       action: 'getintradayactivity',
                       userid: userid,
@@ -83,7 +83,7 @@ module WearableApis
       #
       #
       #
-      def get_sleep_measures(userid, startdate, enddate, opts={})
+      def get_sleep_measures(userid, startdate, enddate, opts = {})
         opts.merge!({
                       action: 'get',
                       userid: userid,
@@ -110,7 +110,7 @@ module WearableApis
       #                                   Either the lastupdate, the date or the stardateymd/enddateymd must be used.
       # @option opts [type] :offset   Value to specify when a first call returns 'more=true' and 'offset=XX' with XX the value use.
       # @return [Hash, nil] return the api response.
-      def get_sleep_summary(opts={})
+      def get_sleep_summary(opts = {})
         opts.merge!({
                       action: 'getsummary'
                     })
@@ -129,7 +129,7 @@ module WearableApis
       # @option opts [type] :enddateymd   end date for the log (requires startdateymd).
       #                                   Either the lastupdate, the date or the stardateymd/enddateymd must be used.
       # @return [Hash, nil] return the api response.
-      def get_workouts(userid, opts={})
+      def get_workouts(userid, opts = {})
         opts.merge!({
                       action: 'getworkouts',
                       userid: userid
