@@ -8,6 +8,11 @@ module WearableApis
         response = @client.get(build_path_and_params('dailies', start_time, end_time, backfill))
         resp = parse_response(response)
 
+        case
+        when response.code == '403'
+          then raise OAuth::Error, resp['errorMessage']
+        end
+
         if all
           resp
         else
@@ -40,6 +45,11 @@ module WearableApis
       def get_sleeps(start_time, end_time, backfill = false, all = false)
         response = @client.get(build_path_and_params('sleeps', start_time, end_time, backfill))
         resp = parse_response(response)
+
+        case
+        when response.code == '403'
+          then raise OAuth::Error, resp['errorMessage']
+        end
 
         if all
           resp
